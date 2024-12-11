@@ -25,6 +25,10 @@ $result = mysqli_query($conn, "SELECT * FROM pegawai");
 </thead>
 <tbody>
     <?php $no = 1; while($row = mysqli_fetch_assoc($result)): ?>
+        <div class="d-flex justify-content-end mb-3">
+    <a href="cetak-pegawai.php" target="_blank" class="btn btn-primary">Cetak Laporan PDF</a>
+</div>
+
     <tr>
         <td><?= $no++; ?></td>
         <td><img src="uploads/<?= $row['foto']; ?>" alt="<?= $row['nama']; ?>" style="width: 50px; height: 50px; object-fit: cover;"></td>
