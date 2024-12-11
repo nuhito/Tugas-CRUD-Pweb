@@ -12,7 +12,6 @@ $result = mysqli_query($conn, "SELECT * FROM pegawai");
 <body class="container mt-5">
     <h1 class="text-center">Daftar Pegawai</h1>
     
-    <!-- Tombol Cetak PDF diletakkan di luar loop -->
     <div class="d-flex justify-content-end mb-3">
         <a href="cetak-pegawai.php" target="_blank" class="btn btn-primary">Cetak Laporan PDF</a>
     </div>
