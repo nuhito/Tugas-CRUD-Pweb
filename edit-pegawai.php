@@ -22,26 +22,33 @@ if (mysqli_num_rows($result) < 1) {
 </head>
 <body class="container mt-5">
     <h1 class="text-center">Edit Data Pegawai</h1>
-    <form action="proses-edit-pegawai.php" method="POST">
-        <input type="hidden" name="id" value="<?= $data['id'] ?>">
-        <div class="form-group">
-            <label>Nama:</label>
-            <input type="text" class="form-control" name="nama" value="<?= $data['nama'] ?>" required>
-        </div>
-        <div class="form-group">
-            <label>Jenis Kelamin:</label><br>
-            <input type="radio" name="jenis_kelamin" value="Laki-laki" <?= ($data['jenis_kelamin'] == 'Laki-laki') ? 'checked' : '' ?>> Laki-laki
-            <input type="radio" name="jenis_kelamin" value="Perempuan" <?= ($data['jenis_kelamin'] == 'Perempuan') ? 'checked' : '' ?>> Perempuan
-        </div>
-        <div class="form-group">
-            <label>Jabatan:</label>
-            <input type="text" class="form-control" name="jabatan" value="<?= $data['jabatan'] ?>" required>
-        </div>
-        <div class="form-group">
-            <label>Email:</label>
-            <input type="email" class="form-control" name="email" value="<?= $data['email'] ?>" required>
-        </div>
-        <button type="submit" class="btn btn-primary">Simpan</button>
-    </form>
+    <form action="proses-edit-pegawai.php" method="POST" enctype="multipart/form-data">
+    <input type="hidden" name="id" value="<?= $data['id'] ?>">
+    <div class="form-group">
+        <label>Nama:</label>
+        <input type="text" class="form-control" name="nama" value="<?= $data['nama'] ?>" required>
+    </div>
+    <div class="form-group">
+        <label>Jenis Kelamin:</label><br>
+        <input type="radio" name="jenis_kelamin" value="Laki-laki" <?= ($data['jenis_kelamin'] == 'Laki-laki') ? 'checked' : '' ?>> Laki-laki
+        <input type="radio" name="jenis_kelamin" value="Perempuan" <?= ($data['jenis_kelamin'] == 'Perempuan') ? 'checked' : '' ?>> Perempuan
+    </div>
+    <div class="form-group">
+        <label>Jabatan:</label>
+        <input type="text" class="form-control" name="jabatan" value="<?= $data['jabatan'] ?>" required>
+    </div>
+    <div class="form-group">
+        <label>Email:</label>
+        <input type="email" class="form-control" name="email" value="<?= $data['email'] ?>" required>
+    </div>
+    <div class="form-group">
+        <label>Foto Lama:</label><br>
+        <img src="uploads/<?= $data['foto'] ?>" alt="<?= $data['nama'] ?>" style="width: 100px; height: 100px; object-fit: cover;"><br>
+        <label>Ganti Foto:</label>
+        <input type="file" class="form-control" name="foto" accept="image/*">
+    </div>
+    <button type="submit" class="btn btn-primary">Simpan</button>
+</form>
+
 </body>
 </html>
