@@ -1,4 +1,18 @@
-<thead class="thead-dark">
+<?php
+include("config.php");
+$result = mysqli_query($conn, "SELECT * FROM pegawai");
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Daftar Pegawai</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body class="container mt-5">
+    <h1 class="text-center">Daftar Pegawai</h1>
+    <table class="table table-striped">
+    <thead class="thead-dark">
     <tr>
         <th>No</th>
         <th>Foto</th>
@@ -25,3 +39,7 @@
     </tr>
     <?php endwhile; ?>
 </tbody>
+
+    </table>
+</body>
+</html>
